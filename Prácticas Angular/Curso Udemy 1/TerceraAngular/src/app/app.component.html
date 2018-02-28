@@ -1,0 +1,24 @@
+<div class="container">
+  <!--Informar al app.component (nombreEvento), no existe por default-->
+  <app-cockpit
+    (serverCreated)="onServerAdded($event)"
+    (bpCreated)="onBlueprintAdded($event)"></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <!--Para acceder a los elementos de server-element en app
+          hacemos un bind para acceder al componente desde el exterior-->
+      <app-server-element
+        *ngFor="let serverElement of serverElements"
+        [srvElement]="serverElement">
+        <!--Código de server-element.component.html-->
+        <!--Por default no se toma en cuenta pero si se edita en el html de origen
+            con 'ng-content' entonces se puede tomar en cuenta.-->
+          <p #contentParagraph>
+            <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
+            <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+          </p>
+        </app-server-element>
+    </div>
+  </div>
+</div>

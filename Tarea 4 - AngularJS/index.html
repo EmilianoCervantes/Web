@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ListaDeAlumnos">
+	<head>
+	   <meta charset="utf-8">
+	   <title>Listado de alumnos con AngularJS</title>
+	   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js" ></script>
+	   <script type="text/javascript" src="scripts/angular-local-storage.min.js"></script>
+	   <script type="text/javascript" src="scripts/controller.js"></script>
+	</head>
+	<body ng-controller="FirstController">
+		{{ mi_html | removeHtml }}
+		<h3>Lista de alumnos</h3>
+		<ul style="list-style:none;">
+			<li ng-repeat="alumno in alumnos">
+				{{alumno.carrera}} - {{alumno.nombre}} - {{alumno.matricula}} - ver más
+			</li>
+		</ul>
+		<form ng-submit="agregarAlumno()">
+			<input type="text" value="nombre" ng-model="nuevoAlumno.nombre">
+			<input type="text" value="matricula" ng-model="nuevoAlumno.matricula">
+			<input type="text" value="carrera" ng-model="nuevoAlumno.carrera">
+			<input type="submit" value="Registrar alumno">
+		</form>
+		<button ng-click="clean()">Limpiar</button>
+	</body>
+</html>

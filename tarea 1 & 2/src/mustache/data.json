@@ -1,0 +1,15 @@
+{
+	"title" : "Tarea 1 Emiliano",
+	"alumnos" : [
+		{ "nombre" : "Emiliano", "matricula" : "A01332891", "mat1" : "87", "mat2" : "79", "mat3" : "73", "mat4" : "82", "mat5" : "87", "mat6" : "92", "promedio" : "" },
+		{ "nombre" : "Memo", "matricula" : "A01332278", "mat1" : "90", "mat2" : "94", "mat3" : "70", "mat4" : "82", "mat5" : "88", "mat6" : "81", "promedio" : "" },
+		{ "nombre" : "Alison", "matricula" : "A01064754", "mat1" : "94", "mat2" : "82", "mat3" : "65", "mat4" : "80", "mat5" : "81", "mat6" : "85", "promedio" : "" }
+		{ "nombre" : "Irvin", "matricula" : "A01333820", "mat1" : "94", "mat2" : "75", "mat3" : "89", "mat4" : "66", "mat5" : "94", "mat6" : "93", "promedio" : "" },
+		{ "nombre" : "Alfredo", "matricula" : "A01332573", "mat1" : "90", "mat2" : "84", "mat3" : "67", "mat4" : "69", "mat5" : "90", "mat6" : "96", "promedio" : "" },
+		{ "nombre" : "Nancy", "matricula" : "A01332638", "mat1" : "100", "mat2" : "85", "mat3" : "78", "mat4" : "86", "mat5" : "95", "mat6" : "90", "promedio" : "" }
+		{ "nombre" : "Fernanda", "matricula" : "A01332913", "mat1" : "90", "mat2" : "75", "mat3" : "80", "mat4" : "85", "mat5" : "90", "mat6" : "90", "promedio" : "" },
+		{ "nombre" : "Abigail", "matricula" : "A01332959", "mat1" : "83", "mat2" : "71", "mat3" : "84", "mat4" : "89", "mat5" : "90", "mat6" : "95", "promedio" : "" },
+		{ "nombre" : "Nicole", "matricula" : "A01333311", "mat1" : "98", "mat2" : "91", "mat3" : "78", "mat4" : "71", "mat5" : "73", "mat6" : "92", "promedio" : "" }
+		{ "nombre" : "Karen", "matricula" : "A01332650", "mat1" : "61", "mat2" : "67", "mat3" : "73", "mat4" : "77", "mat5" : "85", "mat6" : "90", "promedio" : "" }
+	]
+}

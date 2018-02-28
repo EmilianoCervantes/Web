@@ -1,0 +1,96 @@
+<div class="row">
+	<div class="col-xs-12">
+		<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+			<!--Botones-->
+			<div class="row">
+				<div class="col-xs-12">
+					<button type="submit"
+						[disabled]="!recipeForm.valid"
+						class="btn btn-success">Guardar</button>
+					<button type="button" class="btn btn-danger" (click)="onCancel()">Cancelar</button>
+				</div>
+			</div>
+			<!--Input nombre de la receta-->
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="form-group">
+						<label for="name">Nombre</label>
+						<input type="text" id="name"
+							formControlName="name"
+							class="form-control">
+					</div>
+				</div>
+			</div>
+			<!--Input para añadir la imagen-->
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="form-group">
+						<label for="imagePath">Url imagen</label>
+						<input type="text"
+							id="imagePath"
+							formControlName="imagePath"
+							class="form-control"
+							#imagePath>
+					</div>
+				</div>
+			</div>
+			<!--Preview de la imagen-->
+			<div class="row">
+				<div class="col-xs-12">
+					<img [src]="imagePath.value" class="img-responsive">
+				</div>
+			</div>
+			<!--Input descripción de la receta-->
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="form-group">
+						<label for="description">Descripción</label>
+						<textarea type="text"
+							id="description"
+							formControlName ="description"
+							class="form-control" rows="6"></textarea>
+					</div>
+				</div>
+			</div>
+			<!--Añadir ingredientes de la receta-->
+			<!--Se utilizará un array de controls-->
+			<div class="row">
+				<!--Se inserta la directiva en este div
+					porque es el que envuelve toda la sección.
+				-->
+				<div class="col-xs-12" formArrayName="ingredients">
+					<!--Nombre del ingrediente-->
+					<div class="row"
+					*ngFor="let ingredientCtrl of recipeForm.get('ingredients').controls; let i = index"
+						[formGroupName]="i"
+						style="margin-top: 1em;">
+						<div class="col-xs-8">
+							<input type="text"
+								formControlName="name"
+								class="form-control">
+						</div>
+						<!--Cantidad del ingrediente-->
+						<div class="col-xs-2">
+							<input type="number"
+								formControlName="amount"
+								class="form-control">
+						</div>
+						<!--Eliminar el ingrediente-->
+						<div class="col-xs-2">
+							<button class="btn btn-danger"
+								type="button"
+								(click)="onDeleteIngredient(i)">X</button>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-xs-12">
+							<button type="button" class="btn btn-success"
+								(click)="onAddingIngredient()">Agregar Ingrediente</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
